@@ -1,12 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAdjust, faFilePdf, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faFilePdf, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { motion } from 'framer-motion';
 
-function Landing({ toggleModal }) {
+const pageVariants = {
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -30 },
+};
+
+export default function Home() {
   return (
-    <header className="header">
+    <motion.div
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.5 }}
+    >
+    {<header className="header">
       <div className="header__content">
         <h1 className="title">Hey</h1>
         <h1 className="title orange">I'm Jack.</h1>
@@ -49,8 +63,7 @@ function Landing({ toggleModal }) {
           </a>
         </div>
       </div>
-    </header>
+    </header>}
+    </motion.div>
   );
 }
-
-export default Landing;
