@@ -5,6 +5,7 @@ import Contact from './pages/Contact';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './styles/App.css'
+import Resume from '..public/Resume.pdf'
 
 function App() {
   return (
