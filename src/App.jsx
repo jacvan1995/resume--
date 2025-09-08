@@ -9,14 +9,18 @@ import Resume from '..public/Resume.pdf'
 import MailButton from './components/MailButton'
 import { AnimatePresence } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import Modal from './components/Modal';
 
 function App() {
   const location = useLocation()
+  const [isModalOpen, setModalOpen] = useState(false);
+  const toggleModal = () => setModalOpen((prev) => !prev);
 
   return (
     <Router>
       <Header />
-      <MailButton />
+      <MailButton toggleModal={toggleModal} />
+      <Modal isOpen={isModalOpen} toggleModal={toggleModal} />
       <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
