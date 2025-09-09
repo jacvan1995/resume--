@@ -1,8 +1,10 @@
 import Logo from "../../assets/logo-transparent-svg.svg";
-import { NavLink } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import { faAdjust } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Header.css'
+
 
 
 const pageVariants = {
@@ -11,7 +13,7 @@ const pageVariants = {
   exit: { opacity: 0, y: -30 },
 };
 
-function Header(toggleContrast) {
+function Header({toggleContrast}) {
   return (
     <motion.div
       variants={pageVariants}
@@ -26,28 +28,28 @@ function Header(toggleContrast) {
         </figure>
         <ul className="nav__link--list">
           <li className="nav__link">
-            <NavLink
+            <Link
               to="/about"
               className="nav__link--anchor link__hover-effect link__hover-effect--black"
             >
               About
-            </NavLink>
+            </Link>
           </li>
           <li className="nav__link">
-            <NavLink
+            <Link
               to="/projects"
               className="nav__link--anchor link__hover-effect link__hover-effect--black"
             >
               Projects
-            </NavLink>
+            </Link>
           </li>
           <li className="nav__link">
-            <NavLink
+            <Link
               to="/contact"
               className="nav__link--anchor link__hover-effect link__hover-effect--black"
             >
               Contact
-            </NavLink>
+            </Link>
           </li>
           <li className="nav__link click" onClick={toggleContrast}>
             <button className="nav__link--anchor link__hover-effect link__hover-effect--black">

@@ -9,7 +9,6 @@ import {
 
 import "./styles/styles.css";
 import reportWebVitals from "./reportWebVitals.js";
-
 import App from "./App.jsx";
 import Home from './pages/Home/Home.jsx';
 import Projects from './pages/Projects/Projects.jsx'; // Make sure this import exists

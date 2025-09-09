@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -7,20 +7,18 @@ import Modal from './components/Modal/Modal';
 import './styles/App.css';
 import { Outlet, useLocation } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
+import {
+  moveBackground,
+  toggleContrast,
+  contact,
+  toggleModal
+} from './utils.js';
 
 function App() {
   const location = useLocation();
   const [isModalOpen, setModalOpen] = useState(false);
   const toggleModal = () => setModalOpen((prev) => !prev);
-    const [isHighContrast, darkTheme] = useState(false);
 
-  const toggleContrast = () => {
-   darkTheme(prev => !prev);
-  };
-
-  useEffect(() => {
-    document.body.classList.toggle('high-contrast', isHighContrast);
-  }, [isHighContrast]);
 
 
   return (

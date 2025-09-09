@@ -56,3 +56,10 @@ function toggleModal() {
   isModalOpen = true;
   document.body.classList += " modal--open";
 }
+
+export {
+  moveBackground,
+  toggleContrast,
+  contact,
+  toggleModal
+};

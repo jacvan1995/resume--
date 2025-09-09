@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { motion } from 'framer-motion';
+import './Home.css'
 
 const pageVariants = {
   initial: { opacity: 0, y: 30 },
@@ -11,7 +11,7 @@ const pageVariants = {
   exit: { opacity: 0, y: -30 },
 };
 
-export default function Home() {
+export default function Home({toggleModal}) {
   return (
     <motion.div
       variants={pageVariants}
@@ -25,10 +25,10 @@ export default function Home() {
         <h1 className="title">Hey</h1>
         <h1 className="title orange">I'm Jack.</h1>
         <p className="header__para">
-          I'm a <b className="orange">Frontend Software Engineer</b> with a strong motivation for building web applications
+          I'm Jack <b className="orange">Frontend Software Engineer</b> with strong motivation for building web applications
           with great user experiences.
           <br />
-          Here's a bit more{' '}
+          Here's Link bit more{' '}
           <b className="orange click" onClick={toggleModal}>
             about me
           </b>.
