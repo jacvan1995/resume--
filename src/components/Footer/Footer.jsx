@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import Logo from '../assets/logo.svg';
+import logo from '../../assets/logo-transparent-svg.svg'
 import './Footer.css';
 
 const pageVariants = {
@@ -25,7 +25,7 @@ export default function Footer({ toggleModal }) {
             <div className="row footer__row">
               <a href="#" className="footer__anchor">
                 <figure className="footer__logo">
-                  <img src={Logo} className="footer__logo--img" alt="Logo" />
+                  <img src={logo} className="footer__logo--img" alt="Logo" />
                 </figure>
                 <span className="footer__logo--popper">
                   Top <FontAwesomeIcon icon={faArrowUp} />

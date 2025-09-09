@@ -1,4 +1,4 @@
-import Logo from "../assets/logo-transparent-svg.svg";
+import Logo from "../../assets/logo-transparent-svg.svg";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { faAdjust } from '@fortawesome/free-solid-svg-icons';
@@ -11,7 +11,7 @@ const pageVariants = {
   exit: { opacity: 0, y: -30 },
 };
 
-function Header() {
+function Header(toggleContrast) {
   return (
     <motion.div
       variants={pageVariants}

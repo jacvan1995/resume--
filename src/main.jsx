@@ -1,65 +1,62 @@
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
 import {
-  Outlet,
   RouterProvider,
   createRootRoute,
   createRoute,
   createRouter,
 } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
-
-import "./styles.css";
+import "./styles/styles.css";
 import reportWebVitals from "./reportWebVitals.js";
 
 import App from "./App.jsx";
+import Home from './pages/Home/Home.jsx';
+import Projects from './pages/Projects/Projects.jsx'; // Make sure this import exists
 
+// 1. Create root layout route
 const rootRoute = createRootRoute({
-  component: () => (
-    <>
-    
-    
-      <Outlet />
-      <TanStackRouterDevtools />
-      
-    
-    </>
-  ),
-});
-
-const indexRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/",
   component: App,
 });
 
-const routeTree = rootRoute.addChildren([indexRoute]);
+// 2. Create child routes
+const homeRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/",
+  component: Home,
+});
 
+const projectsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "/projects",
+  component: Projects,
+});
+
+// 3. Add child routes to root
+const routeTree = rootRoute.addChildren([
+  homeRoute,
+  projectsRoute,
+]);
+
+// 4. Create router
 const router = createRouter({
   routeTree,
-  context: {
-    
-  },
+  context: {},
   defaultPreload: "intent",
   scrollRestoration: true,
   defaultStructuralSharing: true,
   defaultPreloadStaleTime: 0,
 });
 
+// 5. Mount app
 const rootElement = document.getElementById("app");
 if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      
-        <RouterProvider router={router} />
-      
+      <RouterProvider router={router} />
     </StrictMode>
   );
 }
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
