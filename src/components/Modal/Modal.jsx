@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import emailjs from 'emailjs-com';
 import { useState } from 'react';
+import './Modal.css'
 
 export default function Modal({ isOpen, toggleModal }) {
   const [loading, setLoading] = useState(false);

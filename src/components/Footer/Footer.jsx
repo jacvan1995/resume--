@@ -1,4 +1,8 @@
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import Logo from '../assets/logo.svg';
+import './Footer.css';
 
 const pageVariants = {
   initial: { opacity: 0, y: 30 },
@@ -6,7 +10,7 @@ const pageVariants = {
   exit: { opacity: 0, y: -30 },
 };
 
-export default function Footer() {
+export default function Footer({ toggleModal }) {
   return (
     <motion.div
       variants={pageVariants}

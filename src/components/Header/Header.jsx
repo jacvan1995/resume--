@@ -2,6 +2,7 @@ import Logo from "../assets/logo-transparent-svg.svg";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { faAdjust } from '@fortawesome/free-solid-svg-icons';
+import './Header.css'
 
 
 const pageVariants = {
